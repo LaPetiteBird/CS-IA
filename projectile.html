@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Physics Assistant v1.2</title>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<!--
+	<script src="https://unpkg.com/d3@3/d3.min.js"></script>
+-->
+	<script src="https://unpkg.com/function-plot@1/dist/function-plot.js"></script>
+</head>
+<body>
+	<h1>Ultimate SUVAT problem solver</h1>
+	<h2>Scenario</h2>
+	<div id="setting">
+		<select id="system" onchange="shiftSys()">
+			<option value="choose">Choose system</option>
+			<option value="freefall">Freefall</option>
+			<option value="accelerated">Accelerated motion</option>
+		</select>
+	</div>
+	
+	<div id="description">A projectile is launched 
+		<span id="dirspan">
+		<select id="direction" onchange="shiftDir()">
+			<option value="vert">vertically upwards</option>
+			<option value="angle">at an angle</option>
+		</select></span>  and 
+		<select id="lands" onchange="shiftDis()">
+			<option value="choose">choose result</option>
+			<option value="lands">lands back on the ground</option> 
+			<option value="reaches">reaches its peak</option> 
+			<option value="other">other</option>
+		</select>. 
+	<select id="known" onchange="shiftKnown()"> 
+		<option value="choose">Choose variable</option>
+		<option value="Vi">Initial velocity</option> 
+		<option value="Vf">Final velocity</option> 
+		<option value="Vp">Velocity at a point</option>
+		<option value="Tf">Final time</option> 
+		<option value="Tp">Time of the peak</option>
+	</select><span id='extra'></span> is given as <input id="val" type=number onchange="shiftKnown()"> 
+	</div>
+<button id="calcbutton" onclick="calculate()">Calculate everything</button>
+
+
+<script type="text/javascript" src="algorithm_projectile.js"></script>
+</body>
+</html>
